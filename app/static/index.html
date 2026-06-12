@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MD Converter</title>
+  <link rel="icon" href="/static/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav">
+      <a class="brand" href="/" aria-label="MD Converter Home">
+        <span class="logo">MD</span>
+        <span>MD Converter</span>
+      </a>
+      <span class="pill">File to Markdown</span>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Convert files to Markdown.</h1>
+      <p>Upload PDFs, images, Office documents, and structured files. Preview the Markdown output and download a clean <code>.md</code> file.</p>
+    </section>
+
+    <section id="dropzone" class="dropzone" tabindex="0">
+      <input id="fileInput" type="file" hidden />
+      <svg class="upload-icon" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+        <path d="M18 54h28a6 6 0 0 0 6-6V24L38 10H18a6 6 0 0 0-6 6v32a6 6 0 0 0 6 6Z" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M38 10v14h14" stroke="currentColor" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M32 43V27" stroke="currentColor" stroke-width="4" stroke-linecap="round"/>
+        <path d="m24 35 8-8 8 8" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h2>Drag & drop your file here</h2>
+      <p>or click to browse</p>
+      <button type="button" id="browseBtn" class="button">Choose File</button>
+      <small>Supports PDF, images, DOCX, PPTX, XLSX, HTML, CSV, JSON, XML, TXT, ZIP, and EPUB.</small>
+    </section>
+
+    <section class="status-card">
+      <div id="status">No file selected.</div>
+      <button id="convertBtn" class="button" disabled>Convert to Markdown</button>
+    </section>
+
+    <section id="result" class="result hidden">
+      <div class="result-header">
+        <div>
+          <p class="label">Result</p>
+          <h2 id="resultTitle">Markdown preview</h2>
+        </div>
+        <a id="downloadLink" class="button secondary" href="#" download>Download .md</a>
+      </div>
+      <textarea id="markdownPreview" spellcheck="false"></textarea>
+    </section>
+
+    <section class="features" aria-label="Features">
+      <div class="feature"><strong>Multiple formats</strong><span>PDF, images, Office files, web files, and more.</span></div>
+      <div class="feature"><strong>Markdown preview</strong><span>Review the generated Markdown before download.</span></div>
+      <div class="feature"><strong>Instant download</strong><span>Save the converted output as a clean .md file.</span></div>
+      <div class="feature"><strong>Simple workflow</strong><span>Drop, convert, preview, and download.</span></div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div><strong>MD Converter</strong><br />Convert files to Markdown with speed and simplicity.</div>
+      <div>© 2026 MD Converter</div>
+    </div>
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
